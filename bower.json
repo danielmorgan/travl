@@ -1,0 +1,19 @@
+{
+  "name": "travl",
+  "version": "0.0.0",
+  "authors": [
+    "Daniel Morgan <me@danielmorgan.co.uk>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "vue": "~0.12.1"
+  }
+}
