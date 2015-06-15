@@ -47,7 +47,7 @@ gulp.task('images-deploy', function() {
 //compiling our Javascripts
 gulp.task('scripts', function() {
     //this is where our dev JS scripts are
-    return gulp.src(['app/assets/js/vendor/**/*.js', 'app/assets/js/**/*.js'])
+    return gulp.src(['app/assets/js/src/_includes/**/*.js', 'app/assets/js/src/**/*.js'])
                 //this is the filename of the compressed version of our JS
                .pipe(concat('app.js'))
                //catch errors
@@ -63,7 +63,7 @@ gulp.task('scripts', function() {
 //compiling our Javascripts for deployment
 gulp.task('scripts-deploy', function() {
     //this is where our dev JS scripts are
-    return gulp.src(['app/assets/js/vendor/**/*.js', 'app/assets/js/**/*.js'])
+    return gulp.src(['app/assets/js/src/_includes/**/*.js', 'app/assets/js/src/**/*.js'])
                 //this is the filename of the compressed version of our JS
                .pipe(concat('app.js'))
                //compress :D
@@ -177,7 +177,8 @@ gulp.task('scaffold', function() {
 //  compress all scripts and SCSS files
 gulp.task('default', ['browserSync', 'scripts', 'css'], function() {
     //a list of watchers, so it will watch all of the following files waiting for changes
-    gulp.watch('app/assets/js/vendor/**', ['scripts']);
+    gulp.watch('app/assets/js/src/**', ['scripts']);
+    gulp.watch('app/assets/js/src/_includes/**', ['scripts']);
     gulp.watch('app/assets/scss/**', ['css']);
     gulp.watch('app/assets/img/**', ['images']);
     gulp.watch('app/*.html', ['html']);

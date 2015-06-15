@@ -1,6 +1,7 @@
 .sass-cache
 .DS_Store
-/node_modules
-/bower_components
-/dist
-/app/assets/css
+app/js/app.js
+node_modules
+dist
+app/assets/css
+app/assets/js/vendor/*

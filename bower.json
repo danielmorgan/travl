@@ -9,9 +9,7 @@
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower_components",
-    "test",
-    "tests"
+    "app/assets/js/vendor"
   ],
   "dependencies": {
     "vue": "~0.12.1"
