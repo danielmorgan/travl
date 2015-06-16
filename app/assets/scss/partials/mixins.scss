@@ -1,0 +1,10 @@
+@mixin super-shadow($color, $opacity) {
+    text-shadow:    0 0 400px rgba($color, $opacity),
+                    0 0 300px rgba($color, $opacity),
+                    0 0 200px rgba($color, $opacity),
+                    0 0 100px rgba($color, $opacity),
+                    0 0 100px rgba($color, $opacity),
+                    0 0 50px rgba($color, $opacity),
+                    0 0 50px rgba($color, $opacity),
+                    0 0 50px rgba($color, $opacity);
+}

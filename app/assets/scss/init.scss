@@ -1,4 +1,15 @@
+@import url(http://fonts.googleapis.com/css?family=Mallanna);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
 @import "bootstrap-sprockets";
 @import "bootstrap-custom";
+
 @import "variables";
-@import "modules/header";
+
+@import "partials/mixins";
+@import "partials/utility";
+@import "partials/body";
+@import "partials/type";
+
+@import "modules/sections";
+@import "modules/hero";

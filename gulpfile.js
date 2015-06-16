@@ -30,18 +30,11 @@ gulp.task('browserSync', function() {
     });
 });
 
-
-//compressing images & handle SVG files
-gulp.task('images', function(tmp) {
-    gulp.src(['app/assets/img/*.jpg', 'app/assets/img/*.png'])
-        .pipe(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true }))
-        .pipe(gulp.dest('app/assets/img'));
-});
-
 //compressing images & handle SVG files
 gulp.task('images-deploy', function() {
-    gulp.src(['app/assets/img/**/*', '!app/assets/img/README'])
-        .pipe(gulp.dest('dist/images'));
+    gulp.src(['app/assets/img/**/*'])
+        .pipe(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true }))
+        .pipe(gulp.dest('dist/assets/img'));
 });
 
 //compiling our Javascripts
@@ -165,7 +158,7 @@ gulp.task('scaffold', function() {
       'mkdir dist',
       'mkdir dist/assets',
       'mkdir dist/assets/font',
-      'mkdir dist/assets/img',
+      'mkdir dist/img',
       'mkdir dist/assets/js',
       'mkdir dist/assets/css'
     ]
@@ -183,7 +176,6 @@ gulp.task('default', ['browserSync', 'scripts', 'css'], function() {
     gulp.watch('app/assets/js/src/**', ['scripts']);
     gulp.watch('app/assets/js/src/_includes/**', ['scripts']);
     gulp.watch('app/assets/scss/**', ['css']);
-    gulp.watch('app/assets/img/**', ['images']);
     gulp.watch('app/*.html', ['html']);
 });
 
