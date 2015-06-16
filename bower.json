@@ -12,6 +12,7 @@
     "app/assets/js/vendor"
   ],
   "dependencies": {
-    "vue": "~0.12.1"
+    "vue": "~0.12.1",
+    "bootstrap-sass": "~3.3.5"
   }
 }

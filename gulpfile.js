@@ -80,14 +80,15 @@ gulp.task('css', function() {
                 .pipe(sourceMaps.init())
                 //include SCSS and list every "include" folder
                .pipe(sass({
-                      errLogToConsole: true,
-                      includePaths: [
-                          'app/assets/css/'
-                      ]
+                  errLogToConsole: true,
+                  includePaths: [
+                    'app/assets/scss',
+                    'bower_components/bootstrap-sass/assets/stylesheets'
+                  ]
                }))
                .pipe(autoprefixer({
-                   browsers: autoPrefixBrowserList,
-                   cascade:  true
+                  browsers: autoPrefixBrowserList,
+                  cascade:  true
                }))
                //catch errors
                .on('error', gutil.log)
@@ -107,16 +108,18 @@ gulp.task('css-deploy', function() {
     return gulp.src('app/assets/scss/init.scss')
                 //include SCSS includes folder
                .pipe(sass({
-                      includePaths: [
-                          'app/assets/css',
-                      ]
+                  includePaths: [
+                    'app/assets/scss',
+                    'bower_components/bootstrap-sass/assets/stylesheets'
+                  ]
                }))
                .pipe(autoprefixer({
-                   browsers: autoPrefixBrowserList,
-                   cascade:  true
+                  browsers: autoPrefixBrowserList,
+                  cascade:  true
                }))
                //the final filename of our combined css file
                .pipe(concat('styles.css'))
+               //minify css
                .pipe(minifyCSS())
                //where to save our final, compressed css file
                .pipe(gulp.dest('dist/assets/css'));
@@ -126,9 +129,9 @@ gulp.task('css-deploy', function() {
 gulp.task('html', function() {
     //watch any and all HTML files and refresh when something changes
     return gulp.src('app/*.html')
-        .pipe(browserSync.reload({stream: true}))
-       //catch errors
-       .on('error', gutil.log);
+               .pipe(browserSync.reload({stream: true}))
+               //catch errors
+               .on('error', gutil.log);
 });
 
 //migrating over all HTML files for deployment
