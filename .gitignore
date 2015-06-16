@@ -2,6 +2,6 @@
 .DS_Store
 app/js/app.js
 node_modules
+bower_components
 dist
 app/assets/css
-app/assets/js/vendor/*
