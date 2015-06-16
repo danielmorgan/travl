@@ -1,6 +1,5 @@
 .main > section {
     position: relative;
-    border-bottom: 1px solid $middle;
     border-left: 1px solid $middle;
     border-right: 1px solid $middle;
     background: white;
@@ -9,6 +8,12 @@
         margin-top: 40px;
         border-radius: $radius $radius 0 0;
         border-top: 1px solid $middle;
+    }
+
+    &:last-child {
+        border-bottom: 1px solid $middle;
+        margin-bottom: 40px;
+        border-radius: 0 0 $radius $radius;
     }
 
     > .content {
