@@ -1,17 +1,16 @@
 .main > section {
     position: relative;
-    border-left: 1px solid $middle;
-    border-right: 1px solid $middle;
     background: white;
+    border: 1px solid $medium;
+    border-top: 0;
 
     &:first-child {
         margin-top: 40px;
         border-radius: $radius $radius 0 0;
-        border-top: 1px solid $middle;
+        border-top: 1px solid $medium;
     }
 
     &:last-child {
-        border-bottom: 1px solid $middle;
         margin-bottom: 40px;
         border-radius: 0 0 $radius $radius;
     }

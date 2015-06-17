@@ -1,3 +1,13 @@
+//vendor imports
+var includeCSS = [
+	'app/assets/scss/init.scss',
+	'bower_components/leaflet/dist/leaflet.css'
+];
+var includeJS = [
+	'bower_components/leaflet/dist/leaflet.js',
+	'app/assets/js/src/**/*.js'
+];
+
 //initialize all of our variables
 var app, base, concat, directory, gulp, gutil, hostname, path, refresh, sass, uglify, imagemin, minifyCSS, del, browserSync, autoprefixer, gulpSequence, shell, sourceMaps;
 
@@ -40,12 +50,12 @@ gulp.task('images-deploy', function() {
 //compiling our Javascripts
 gulp.task('scripts', function() {
     //this is where our dev JS scripts are
-    return gulp.src(['app/assets/js/src/_includes/**/*.js', 'app/assets/js/src/**/*.js'])
+    return gulp.src(includeJS)
                 //this is the filename of the compressed version of our JS
                .pipe(concat('app.js'))
                //catch errors
                .on('error', gutil.log)
-               //compress :D
+               //compress
                .pipe(uglify())
                //where we will store our finalized, compressed script
                .pipe(gulp.dest('app/assets/js'))
@@ -56,10 +66,10 @@ gulp.task('scripts', function() {
 //compiling our Javascripts for deployment
 gulp.task('scripts-deploy', function() {
     //this is where our dev JS scripts are
-    return gulp.src(['app/assets/js/src/_includes/**/*.js', 'app/assets/js/src/**/*.js'])
+    return gulp.src(includeJS)
                 //this is the filename of the compressed version of our JS
                .pipe(concat('app.js'))
-               //compress :D
+               //compress
                .pipe(uglify())
                //where we will store our finalized, compressed script
                .pipe(gulp.dest('dist/assets/js'));
@@ -68,7 +78,7 @@ gulp.task('scripts-deploy', function() {
 //compiling our SCSS files
 gulp.task('css', function() {
     //the initializer / master SCSS file, which will just be a file that imports everything
-    return gulp.src('app/assets/scss/init.scss')
+    return gulp.src(includeCSS)
                 //get sourceMaps ready
                 .pipe(sourceMaps.init())
                 //include SCSS and list every "include" folder
@@ -98,7 +108,7 @@ gulp.task('css', function() {
 //compiling our SCSS files for deployment
 gulp.task('css-deploy', function() {
     //the initializer / master SCSS file, which will just be a file that imports everything
-    return gulp.src('app/assets/scss/init.scss')
+    return gulp.src(includeCSS)
                 //include SCSS includes folder
                .pipe(sass({
                   includePaths: [

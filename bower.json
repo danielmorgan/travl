@@ -13,6 +13,7 @@
   ],
   "dependencies": {
     "vue": "~0.12.1",
-    "bootstrap-sass": "~3.3.5"
+    "bootstrap-sass": "~3.3.5",
+    "leaflet": "~0.7.3"
   }
 }

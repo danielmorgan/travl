@@ -1,6 +1,7 @@
 .main > section.hero {
-    max-height: 30em;
+    max-height: 20em;
     overflow: hidden;
+    border: 0;
 
     > .img-responsive {
         position: relative;
@@ -39,7 +40,7 @@
         @media (min-width: $screen-xs-min) { font-size: 4.5em; }
         @media (min-width: $screen-sm-min) { font-size: 6em; }
         @media (min-width: $screen-md-min) { font-size: 7.5em; }
-        text-shadow: 0px 2px 5px rgba($brandPrimary - 50%, 1);
+        text-shadow: 0px 3px 1px rgba($brandPrimary - 50%, 0.75);
     }
 
 
